@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.database2try.Display">
+   <top>
+      <AnchorPane prefHeight="85.0" prefWidth="880.0" style="-fx-background-color: black; -fx-border-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="350.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Melt Employees">
+               <font>
+                  <Font name="Snap ITC" size="24.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="55.0" fitWidth="101.0" layoutX="285.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../employees.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="587.0" prefWidth="183.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox layoutX="21.0" layoutY="87.0" prefHeight="389.0" prefWidth="146.0">
+               <children>
+                  <TextField fx:id="idT" promptText="Id">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Region prefHeight="34.0" prefWidth="146.0" />
+                  <TextField fx:id="nameT" promptText="Name">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Region prefHeight="34.0" prefWidth="146.0" />
+                  <TextField fx:id="emailT" promptText="email">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Region prefHeight="34.0" prefWidth="146.0" />
+                  <TextField fx:id="deptT" promptText="dept">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Region prefHeight="34.0" prefWidth="146.0" />
+                  <TextField fx:id="phoneT" promptText="phone Numebr">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Region prefHeight="34.0" prefWidth="146.0" />
+                  <TextField fx:id="UserIdT" promptText="user Id">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="userIdCheck" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" visible="false" />
+               </children>
+            </VBox>
+            <ImageView fitHeight="66.0" fitWidth="77.0" layoutX="102.0" layoutY="488.0" onMouseClicked="#deleteEmp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../deleteEmployee.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="63.0" layoutX="21.0" layoutY="488.0" onMouseClicked="#addNewEmployee" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../add-user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="97.0" prefWidth="880.0" style="-fx-background-color: black; -fx-border-color: white;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="emp_table" editable="true" layoutX="10.0" layoutY="56.0" prefHeight="429.0" prefWidth="611.0" style="-fx-background-color: silver;">
+              <columns>
+                <TableColumn fx:id="Id" onEditCommit="#IdOnEdit" prefWidth="54.666709899902344" text="Id" />
+                <TableColumn fx:id="employeeName" onEditCommit="#NameOnEdit" prefWidth="132.66669464111328" text="employeeName" />
+                  <TableColumn fx:id="email" onEditCommit="#emailOnEdit" prefWidth="102.66658020019531" text="email" />
+                  <TableColumn fx:id="dept" onEditCommit="#deptOnEdit" prefWidth="92.0" text="dept" />
+                  <TableColumn fx:id="phoneNumber" onEditCommit="#phoneNumberOnEdit" prefWidth="168.66665649414062" text="phoneNumber" />
+                  <TableColumn fx:id="userId" onEditCommit="#UserIdOnEdit" prefWidth="66.66668701171875" text="userId" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="587.0" prefWidth="64.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
